@@ -50,8 +50,8 @@ class SignUpView(CreateView):
         form = self.form_class()
         for field_name, field_value in user_settings.items():
             if field_name in form.fields:
-                form.fields[field_name].required = field_value['required']
-                form.fields[field_name].widget = forms.HiddenInput() if field_value['hidden'] else None
+                form.fields[field_name].required = field_value
+                form.fields[field_name].widget = forms.HiddenInput() if field_value else None
         if self.request.POST:
             context['form'] = form(self.request.POST)
         else:
