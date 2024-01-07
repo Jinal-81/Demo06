@@ -23,7 +23,6 @@ class UserSettings(models.Model):
         ('required', 'Required'),
         ('hidden', 'Hidden'),
     ]
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
     username_option = models.CharField(max_length=10, null=True, blank=True, choices=FIELD_CHOICES)
     email_option = models.CharField(max_length=10, null=True, blank=True, choices=FIELD_CHOICES)
     password_option = models.CharField(max_length=10, null=True, blank=True, choices=FIELD_CHOICES)
